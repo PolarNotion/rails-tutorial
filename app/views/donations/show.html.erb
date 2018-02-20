@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Amount in cents:</strong>
+  <%= @donation.amount_in_cents %>
+</p>
+
+<p>
+  <strong>Donor name:</strong>
+  <%= @donation.donor_name %>
+</p>
+
+<p>
+  <strong>Stripe charge:</strong>
+  <%= @donation.stripe_charge_id %>
+</p>
+
+<p>
+  <strong>Donor email:</strong>
+  <%= @donation.donor_email %>
+</p>
+
+<%= link_to 'Edit', edit_donation_path(@donation) %> |
+<%= link_to 'Back', donations_path %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  amount_in_cents: 1
+  donor_name: MyString
+  stripe_charge_id: MyString
+  donor_email: MyString
+
+two:
+  amount_in_cents: 1
+  donor_name: MyString
+  stripe_charge_id: MyString
+  donor_email: MyString

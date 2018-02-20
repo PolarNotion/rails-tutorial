@@ -1,0 +1,37 @@
+<%= form_with(model: donation, local: true) do |form| %>
+  <% if donation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(donation.errors.count, "error") %> prohibited this donation from being saved:</h2>
+
+      <ul>
+      <% donation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :amount_in_cents %>
+    <%= form.number_field :amount_in_cents, id: :donation_amount_in_cents %>
+  </div>
+
+  <div class="field">
+    <%= form.label :donor_name %>
+    <%= form.text_field :donor_name, id: :donation_donor_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :stripe_charge_id %>
+    <%= form.text_field :stripe_charge_id, id: :donation_stripe_charge_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :donor_email %>
+    <%= form.text_field :donor_email, id: :donation_donor_email %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
