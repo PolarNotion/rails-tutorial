@@ -2,6 +2,8 @@
 
 <h1>Donations</h1>
 <h2>Total Gross Donations: <%= @donations.gross_amount_in_dollars %></h2>
+<h2>High Value Gross Donations: <%= @donations.recent.high_value.gross_amount_in_dollars %></h2>
+
 <table>
   <thead>
     <tr>

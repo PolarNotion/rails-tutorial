@@ -1,4 +1,7 @@
 class Donation < ApplicationRecord
+  scope :high_value, -> { where('amount_in_cents >= ?', 10000) }
+  scope :recent, -> { where('created_at > ?', 30.days.ago) }
+  
   validates :amount_in_cents, presence: true
   
   before_save :_ensure_stripe_charge_id
@@ -24,4 +27,5 @@ class Donation < ApplicationRecord
       self.stripe_charge_id = SecureRandom.hex(6)
     end
   end
+  
 end
