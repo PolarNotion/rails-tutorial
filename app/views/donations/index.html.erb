@@ -1,11 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Donations</h1>
-
+<h2>Total Gross Donations: <%= @donations.gross_amount_in_dollars %></h2>
 <table>
   <thead>
     <tr>
       <th>Amount in cents</th>
+      <th>Transaction Cost</th>
       <th>Donor name</th>
       <th>Stripe charge</th>
       <th>Donor email</th>
@@ -16,7 +17,8 @@
   <tbody>
     <% @donations.each do |donation| %>
       <tr>
-        <td><%= donation.amount_in_cents %></td>
+        <td><%= number_to_currency(donation.amount_in_dollars) %></td>
+        <td><%= number_to_currency(donation.transaction_amount_in_dollars) %></td>
         <td><%= donation.donor_name %></td>
         <td><%= donation.stripe_charge_id %></td>
         <td><%= donation.donor_email %></td>
